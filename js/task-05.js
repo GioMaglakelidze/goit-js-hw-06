@@ -6,13 +6,9 @@ if (textInput.value !== "") {
   output.textContent = textInput.value;
 }
 
-// Додавання слухача події до інпута
-textInput.addEventListener("input", (event) => {
-  // Присвоюємо поточне значення інпута в span
-  output.textContent = event.target.value;
-
-  // Якщо інпут не заповнений то показати 'Anonymous'
-  if (event.target.value === "") {
-    output.textContent = "Anonymous";
+textInput.addEventListener("input", function AnonymousNickChange() {
+  if (this.value === "" || this.value === " ") {
+    return (output.textContent = "Anonymous");
   }
+  output.textContent = this.value;
 });
