@@ -1,6 +1,11 @@
 const textInput = document.querySelector("#name-input");
 const output = document.querySelector("#name-output");
 
+//додаткова перевірка
+if (textInput.value !== "") {
+  output.textContent = textInput.value;
+}
+
 // Додавання слухача події до інпута
 textInput.addEventListener("input", (event) => {
   // Присвоюємо поточне значення інпута в span
